@@ -1,0 +1,40 @@
+{
+  "name": "ngx-force",
+  "version": "0.0.1",
+  "description": "Library to use Salesforce REST API in Angular 2+ and Ionic 2",
+  "main": "ngx-force.js",
+  "scripts": {
+    "watch": "tsc -p src -w",
+    "build": "rm -rf lib && tsc -p src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaviEspinar/ngx-force.git"
+  },
+  "keywords": [
+    "Angular",
+    "Ionic",
+    "2",
+    "Salesforce",
+    "Library"
+  ],
+  "author": "javiespinar@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JaviEspinar/ngx-force/issues"
+  },
+  "homepage": "https://github.com/JaviEspinar/ngx-force#readme",
+  "devDependencies": {
+    "typescript": "2.2.1"
+  },
+  "dependencies": {
+    "@angular/common": "4.1.0",
+    "@angular/compiler": "4.1.0",
+    "@angular/core": "4.1.0",
+    "@angular/http": "4.1.0",
+    "@angular/platform-browser": "4.1.0",
+    "@angular/platform-browser-dynamic": "4.1.0",
+    "rxjs": "5.1.1",
+    "zone.js":"0.8.10"
+  }
+}

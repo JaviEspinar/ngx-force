@@ -1,0 +1,33 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "mkdir build && tsc -p src -w",
+    "build": "tsc -p src",
+    "start": "http-server -c-1 ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "2.2.1"
+  },
+  "dependencies": {
+    "http-server": "^0.8.5",
+    "systemjs": "^0.19.9",
+    "@angular/common": "4.1.0",
+    "@angular/compiler":  "4.1.0",
+    "@angular/core":  "4.1.0",
+    "@angular/http":  "4.1.0",
+    "@angular/platform-browser":  "4.1.0",
+    "@angular/platform-browser-dynamic":  "4.1.0",
+    "rxjs": "5.1.1",
+    "zone.js":"0.8.10",
+    "angular2-library-example": "^1.0.6",
+    "es6-promise": "^3.0.2",
+    "core-js": "^2.4.0",
+    "reflect-metadata": "0.1.2",
+    "ts-loader": "^0.8.2"
+  }
+}
