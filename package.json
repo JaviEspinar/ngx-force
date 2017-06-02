@@ -5,7 +5,7 @@
   "main": "ngx-force.js",
   "scripts": {
     "watch": "tsc -p src -w",
-    "build": "tsc -p src"
+    "build": "rm -rf lib && tsc -p src"
   },
   "repository": {
     "type": "git",

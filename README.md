@@ -46,6 +46,14 @@ export class YourApp {
             console.error('Error', e);
         });
     };    
+    
+    getContactsInfo(){
+        this.salesforce.query('select id, Name from contact LIMIT 50').then(r => {
+            console.log('Results', r);
+        }, e=>{
+          console.log('Error', e);
+        });
+    };
 }
 ```
 

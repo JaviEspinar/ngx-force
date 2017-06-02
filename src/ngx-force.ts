@@ -283,7 +283,8 @@ export class Force {
 
                 optionInput = {
                     headers: headers,
-                    method: method
+                    method: method,
+                    params: obj.params
                 };
 
                 if (obj.responseType === 'arraybuffer') {
@@ -361,7 +362,6 @@ export class Force {
 
     public update(objectName, data) {
         var id = data.Id,
-            // TODO test this clone
             fields = {...data};
 
         delete fields.attributes;
