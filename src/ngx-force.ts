@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 
 @Injectable()
-export class NgxForce {
+export class Force {
 
     private loginURL: string = 'https://test.salesforce.com';
 

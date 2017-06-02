@@ -1,1 +1,1 @@
-exports.NgxForce = require('./lib/ngx-force').NgxForce;
+exports.Force = require('./lib/ngx-force').Force;

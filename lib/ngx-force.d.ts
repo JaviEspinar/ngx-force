@@ -1,7 +1,7 @@
 import { NgZone } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-export declare class NgxForce {
+export declare class Force {
     private http;
     private zone;
     private loginURL;
