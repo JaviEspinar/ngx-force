@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic ngxForce Boilerplate
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>
+    <button ion-button color="primary" (click)="login()">Log in Salesforce</button>
+  </p>
+
+  <ion-list *ngIf="userId">
+    <ion-item>
+      <h2>Logged!!</h2>
+      <h3>User Id {{userId}}</h3>
+    </ion-item>
+  </ion-list>
+
+  <p>
+    <button ion-button color="primary" (click)="getUserInfo()" [disabled]="!userId">
+          Get user info
+      </button>
+  </p>
+  <ion-list *ngIf="userInfo">
+    <ion-item>
+      <h2>Id</h2>
+      <h3>{{userInfo.Id}}</h3>
+    </ion-item>
+
+    <ion-item>
+      <h2>Email</h2>
+      <h3>{{userInfo.Email}}</h3>
+    </ion-item>
+
+    <ion-item>
+      <h2>FirstName</h2>
+      <h3>{{userInfo.FirstName}}</h3>
+    </ion-item>
+
+    <ion-item>
+      <h2>LastName</h2>
+      <h3>{{userInfo.LastName}}</h3>
+    </ion-item>
+
+    <ion-item>
+      <h2>Alias</h2>
+      <h3>{{userInfo.Alias}}</h3>
+    </ion-item>
+  </ion-list>
+
+  <p>
+    <button ion-button color="primary" (click)="getContactsInfo()" [disabled]="!userId">
+          Get contacts info
+      </button>
+  </p>
+  <ion-list *ngIf="contacts">
+    <ion-item *ngFor="let c of contacts; trackBy: index">
+      <h3>{{c.Name}} - {{c.Id}}</h3>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
