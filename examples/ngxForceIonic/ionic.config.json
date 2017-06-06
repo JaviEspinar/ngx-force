@@ -1,5 +1,9 @@
 {
   "name": "ngxForceIonic",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "proxies": [{
+    "path": "/api",
+    "proxyUrl": "https://test.salesforce.com"
+  }]
 }

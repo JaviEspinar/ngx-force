@@ -22,7 +22,7 @@ export class HomePage {
     params.loginURL = 'https://test.salesforce.com';
     params.useProxy = true;
     //You have to enable the proxy url in your salesforce application to enable consuming APIs in a custom server
-    params.proxyURL = 'https://sfdc-cors.herokuapp.com';
+    params.proxyURL = 'https://sf-test-proxy.herokuapp.com/';
     force.init(params);
   }
 
