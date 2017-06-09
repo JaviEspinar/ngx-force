@@ -165,7 +165,7 @@ export class YourApp {
 ### getUserId
 
 * input: -
-* output: Promise
+* output: String
 
     ```typescript
         force.getUserId()
