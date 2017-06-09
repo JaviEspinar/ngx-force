@@ -86,6 +86,205 @@ export class YourApp {
 }
 ```
 
+## Interface
+
+### init
+* input: object that can contains:
+
+    * appId
+        
+        Salesforce app id. 
+
+    * apiVersion 
+
+        Salesforce API version. By default: 37.0
+
+    * loginURL
+
+        Salesforce login url. By default:'https://test.salesforce.com'. Examples:
+        * 'https://test.salesforce.com' - Testing environments
+        * 'https://login.salesforce.com' - Production environment
+
+    * oauthCallbackURL 
+
+        Oauth callback url configured in your salesforce remote app. By default: '<your_base_url>/oauthcallback.html'
+
+    * proxyURL 
+
+        Proxy url to use salesforce API in a custom sever. By default: undefined.
+
+        If you use this library in a hybrid application proxy is not neccessary.
+
+    * useProxy 
+
+        Boolean variable that specifies if the app use proxy.  By default: false
+
+
+    If you are running the app from a Visualforce page you do not need to authenticate. Use the following paramenters. 
+
+    * accessToken (required in this scenario)
+
+        Salesforce access token
+
+    * instanceURL
+
+        Salesforce instance URL
+
+    * refreshToken
+
+        Salesforce refresh token
+
+* output: void
+
+    ```typescript
+        force.init({
+            appId: '3MVG9fMtCkV6eLheIEZplMqWfnGlf3Y.BcWdOf1qytXo9zxgbsrUbS.ExHTgUPJeb3jZeT8NYhc.hMyznKU92',
+            apiVersion: 'v39.0',
+            loginURL: 'https://login.salesforce.com',
+            proxyURL: 'https://sf-test-proxy.herokuapp.com/'
+        });
+    ```
+       
+
+
+### login
+
+* input: -
+
+* output: Promise
+
+    ```typescript
+        force.login().then(r => {
+           // Login done!
+        }, e => {
+            console.error('Error', e);
+        });
+    ```
+    
+
+### getUserId
+
+* input: -
+* output: Promise
+
+    ```typescript
+        force.getUserId()
+    ```
+ 
+
+### isAuthenticated
+
+* input: -
+* output: boolean
+
+    ```typescript
+        force.isAuthenticated()
+    ```
+ 
+
+### request
+
+* input: object that can contains:
+    * path: string. Service url
+    * mehtodd: string. Http method (GET, POST, DELETE ...)
+    * data: any. Service input object. 
+
+* output: Promise
+
+    ```typescript
+        force.request({path: 'services/apexrest/User'}).then(r => {
+            this.userInfo = r;
+        }, e=>{
+            console.error('Error', e);
+        });
+    ```
+ 
+
+### query
+
+* input: string. SOQL query in string format.
+* output: Promise
+
+    ```typescript
+        force.query('select id, Name from contact LIMIT 50').then(r => {
+            this.contacts = r;
+        }, e=>{
+            console.error('Error', e);
+        });
+    ```
+ 
+
+### retrieve
+
+* input:
+    * objectName: string
+    * id: string
+    * fields: Array
+
+* output: Promise
+
+    ```typescript
+        force.retrieve('contact', '00558000000UPm0AAG', ['FirstName', 'LastName']]).then(r => {
+            this.contact = r;
+        }, e=>{
+            console.error('Error', e);
+        });
+    ```
+ 
+
+### create
+
+* inputs:
+    * objectName: string
+    * data: any. Object with the structure of the new record.
+
+* output:Promise
+
+    ```typescript
+        force.create('contact', {FirstName: "Ana", LastName: "Alicia"}).then(r => {
+            console.log('Successfully created ', r);
+        }, e=>{
+            console.error('Error', e);
+        });
+    ```
+ 
+
+### update
+
+* inputs:
+    * objectName: string
+    * data: any. Object with the structure of the new record. It must contain an id.
+    
+* output:Promise
+
+    ```typescript
+        force.update('contact', {Id: "00558000000UPm0AAG", FirstName: "Ana", LastName: "Alicia"}).then(r => {
+            console.log('Successfully updated ', r);
+        }, e=>{
+            console.error('Error', e);
+        });
+
+    ```
+ 
+
+### del
+
+* inputs:
+    * objectName: string
+    * id: string. 
+
+* output:Promise
+
+    ```typescript
+        force.del('contact', "00558000000UPm0AAG").then(r => {
+            console.log('Successfully deleted ', r);
+        }, e=>{
+            console.error('Error', e);
+        });
+    ```
+ 
+
+
 ## Example
 You have an example of the use of this library in examples folder:
 https://github.com/JaviEspinar/ngx-force/tree/master/examples/ngxForceIonic
