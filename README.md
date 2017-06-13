@@ -219,12 +219,12 @@ export class YourApp {
 * input:
     * objectName: string
     * id: string
-    * fields: Array
+    * fields: string
 
 * output: Promise
 
     ```typescript
-        force.retrieve('contact', '00558000000UPm0AAG', ['FirstName', 'LastName']]).then(r => {
+        force.retrieve('User','00557000001UfVXAA0', 'FirstName, LastName').then(r => {
             this.contact = r;
         }, e=>{
             console.error('Error', e);
