@@ -186,7 +186,7 @@ export class YourApp {
 
 * input: object that can contains:
     * path: string. Service url
-    * mehtodd: string. Http method (GET, POST, DELETE ...)
+    * method: string. Http method (GET, POST, DELETE ...)
     * data: any. Service input object. 
 
 * output: Promise
