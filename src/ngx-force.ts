@@ -408,6 +408,6 @@ export class Force {
     }
 
     ngOnDestroy() {
-        (<any>window).angularComponent = null;
+        (<any>window).angularComponentRef = null;
     }
 }
